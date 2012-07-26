@@ -80,10 +80,14 @@ public final class KeyHandler implements DeviceKeyHandler {
         mTouchpadEnabled = true;
     }
 
-    private void toast(String text) {
+    private void toast(final String text) {
         // TODO make those translate-able
         // TODO find out how to make global toasts
-        Toast.makeText(mContext, text, Toast.LENGTH_SHORT).show();
+        mHandler.post(new Runnable() {
+            public void run() {
+                Toast.makeText(mContext, text, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
