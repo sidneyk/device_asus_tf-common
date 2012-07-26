@@ -28,10 +28,10 @@ else:
 def MakeBlob():
     print 'TF common: Generating blob...'
     blobpath = os.path.join(OUTDIR, "boot.blob")
-    cmdblob = ["blobpack_tf", blobpath, "LNX", os.path.join(OUTDIR, "boot.img")]
+    cmdblob = ["blobpack", blobpath, "LNX", os.path.join(OUTDIR, "boot.img")]
     pblob = common.Run(cmdblob, stdout=subprocess.PIPE)
     pblob.communicate()
-    assert pblob.returncode == 0, "blobpack_tf of %s image failed" % (os.path.basename(OUTDIR),)
+    assert pblob.returncode == 0, "blobpack of %s image failed" % (os.path.basename(OUTDIR),)
     return open(blobpath).read()
     
 def WriteBlob(info, blob):
