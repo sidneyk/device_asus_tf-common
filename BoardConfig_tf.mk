@@ -1,2 +1,2 @@
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/asus/tf101
+TARGET_RELEASETOOLS_EXTENSIONS := device/asus/tf-common
